@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace _0_3_Physics_tanks.Scripts.TanksModule.EnemyTankModule
+namespace _3_Physics_tanks.Scripts.TanksModule.EnemyTankModule
 {
     [RequireComponent(typeof(AngleCalculator))]
     public class EnemyMover : MonoBehaviour

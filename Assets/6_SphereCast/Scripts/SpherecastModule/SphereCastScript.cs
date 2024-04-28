@@ -7,9 +7,9 @@ namespace _6_SphereCast.Scripts.SpherecastModule
         public GameObject CurrentHitObject;
         public float CurrentHitDistance;
         
-        [SerializeField] private float Radius = 1f;
-        [SerializeField] private float MaxDistance = 10f;
-        [SerializeField] private LayerMask LayerMask;
+        [SerializeField] private float _radius = 1f;
+        [SerializeField] private float _maxDistance = 10f;
+        [SerializeField] private LayerMask _layerMask;
         
         private Vector3 _origin;
         private Vector3 _direction;
@@ -27,7 +27,7 @@ namespace _6_SphereCast.Scripts.SpherecastModule
         private void CastSphere()
         {
             _origin = transform.position; 
-            if (Physics.SphereCast(_origin, Radius, _direction, out RaycastHit hit, MaxDistance, LayerMask))
+            if (Physics.SphereCast(_origin, _radius, _direction, out RaycastHit hit, _maxDistance, _layerMask))
             {
                 CurrentHitObject = hit.transform.gameObject;
                 CurrentHitDistance = hit.distance;
@@ -35,7 +35,7 @@ namespace _6_SphereCast.Scripts.SpherecastModule
             else
             {
                 CurrentHitObject = null;
-                CurrentHitDistance = MaxDistance;
+                CurrentHitDistance = _maxDistance;
             }
         }
 
@@ -43,7 +43,7 @@ namespace _6_SphereCast.Scripts.SpherecastModule
         {
             Gizmos.color = Color.red;
             Debug.DrawLine(_origin, _origin + _direction * CurrentHitDistance);
-            Gizmos.DrawWireSphere(_origin + _direction * CurrentHitDistance, Radius);
+            Gizmos.DrawWireSphere(_origin + _direction * CurrentHitDistance, _radius);
         }
     }
 }

@@ -4,8 +4,15 @@ namespace _1_Transform.Scripts.Rotators
 {
     public class QuaternionRotator : MonoBehaviour
     {
-        [SerializeField] protected Vector3 _rotationPerSecond;
-        [SerializeField] protected float _speed = 1f;
+        [SerializeField] private Vector3 _rotationPerSecond;
+        [SerializeField] private float _speed = 1f;
+        [SerializeField] private Vector3 _rotation;
+
+        private void Start()
+        {
+            transform.rotation = Quaternion.Euler(_rotation);
+            _rotation = Vector3.zero;
+        }
 
         private void FixedUpdate()
         {
@@ -14,7 +21,30 @@ namespace _1_Transform.Scripts.Rotators
 
         private void Rotate()
         {
-            transform.rotation *= Quaternion.Euler(_rotationPerSecond * (_speed * Time.fixedDeltaTime));
+            Vector3 angle = _rotationPerSecond * (_speed * Time.fixedDeltaTime);
+            transform.rotation *= Quaternion.Euler(angle);
+            TrekRotation(angle);
+        }
+        
+        private void TrekRotation(Vector3 angle)
+        {
+            _rotation += new Vector3(Mathf.Abs(angle.x), Mathf.Abs(angle.y), Mathf.Abs(angle.z));
+
+            if (_rotation.x % 360 > 0)
+            {
+                Debug.Log($"{gameObject.name} turn around oX");
+                _rotation.x -= 360;
+            }
+            if (_rotation.y % 360 > 0)
+            {
+                Debug.Log($"{gameObject.name} turn around oY");
+                _rotation.y -= 360;
+            }
+            if (_rotation.z % 360 > 0)
+            {
+                Debug.Log($"{gameObject.name} turn around oZ");
+                _rotation.z -= 360;
+            }
         }
     }
 }

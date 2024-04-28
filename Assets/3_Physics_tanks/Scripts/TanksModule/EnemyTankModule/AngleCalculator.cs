@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace _0_3_Physics_tanks.Scripts.TanksModule.EnemyTankModule
+namespace _3_Physics_tanks.Scripts.TanksModule.EnemyTankModule
 {
     public class AngleCalculator : MonoBehaviour
     {
@@ -39,7 +39,7 @@ namespace _0_3_Physics_tanks.Scripts.TanksModule.EnemyTankModule
                 float x = targetDir.magnitude - 1.0f;
                 float gravity = 9.8f;
                 float sSqr = _speed * _speed;
-                float underTheSqrRoot = (sSqr * sSqr) - gravity * (gravity * x * x + 2 * y * sSqr);
+                float underTheSqrRoot = sSqr * sSqr - gravity * (gravity * x * x + 2 * y * sSqr);
 
                 if (underTheSqrRoot >= 0.0f) 
                 {

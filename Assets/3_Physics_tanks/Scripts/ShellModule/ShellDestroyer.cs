@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace _0_3_Physics_tanks.Scripts.ShellModule
+namespace _3_Physics_tanks.Scripts.ShellModule
 {
     public class ShellDestroyer : MonoBehaviour
     {

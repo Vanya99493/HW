@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace _0_3_Physics_tanks.Scripts.TanksModule.PlayerTankModule
+namespace _3_Physics_tanks.Scripts.TanksModule.PlayerTankModule
 {
     public class PlayerMover : MonoBehaviour 
     {

@@ -1,8 +1,8 @@
-﻿using _0_3_Physics_tanks.Scripts.ShellModule.View;
-using _0_3_Physics_tanks.Scripts.TanksModule.Interfaces;
+﻿using _3_Physics_tanks.Scripts.ShellModule.View;
+using _3_Physics_tanks.Scripts.TanksModule.Interfaces;
 using UnityEngine;
 
-namespace _0_3_Physics_tanks.Scripts.TanksModule.EnemyTankModule
+namespace _3_Physics_tanks.Scripts.TanksModule.EnemyTankModule
 {
     [RequireComponent(typeof(AngleCalculator))]
     public class EnemyShoot : MonoBehaviour, IShoot

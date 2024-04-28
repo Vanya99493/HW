@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace _0_3_Physics_tanks.Scripts.ShellModule
+namespace _3_Physics_tanks.Scripts.ShellModule
 {
     [RequireComponent(typeof(Rigidbody))]
     public class LookForward : MonoBehaviour

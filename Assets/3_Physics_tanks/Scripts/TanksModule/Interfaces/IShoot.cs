@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace _0_3_Physics_tanks.Scripts.TanksModule.Interfaces
+namespace _3_Physics_tanks.Scripts.TanksModule.Interfaces
 {
     public interface IShoot
     {
